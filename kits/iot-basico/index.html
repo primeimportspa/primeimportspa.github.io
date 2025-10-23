@@ -14,7 +14,7 @@
   <ul>
     <li>ESP32-WROOM-32 (original, Espressif)</li>
     <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
-    <li>Pantalla OLED 0.96" (SSD1306, interfaz I2C)</li>
+    <li>Pantalla OLED 0.96" 128×64 (controlador SSD1306, interfaz I2C, blanco)</li>
     <li>Cables Dupont (macho-hembra, 20 cm)</li>
   </ul>
 
@@ -23,7 +23,7 @@
     <li>Estación meteorológica personal</li>
     <li>Monitoreo de invernadero o terrario</li>
     <li>Proyecto escolar de ciencias</li>
-    <li>Prototipo de domótica (conexión WiFi opcional)</li>
+    <li>Prototipo de domótica con visualización local</li>
   </ul>
 
   <h2>Diagrama de conexión (I2C)</h2>
@@ -92,10 +92,16 @@ void loop() {
 }
   </pre>
 
+  <h2>Notas técnicas</h2>
+  <ul>
+    <li>✅ El módulo OLED incluido usa el <strong>controlador SSD1306 auténtico</strong>, compatible con las librerías Adafruit.</li>
+    <li>✅ Dirección I2C del OLED: <code>0x3C</code> (estándar).</li>
+    <li>✅ Dirección I2C del BME280: <code>0x76</code> (común en módulos Bosch).</li>
+  </ul>
+
   <h2>Recomendaciones</h2>
   <ul>
     <li>✅ Alimente el ESP32 con una fuente de 5V/1A (no desde USB si el proyecto es permanente).</li>
-    <li>✅ El OLED y el BME280 usan direcciones I2C diferentes (0x3C y 0x76), por lo que no hay conflicto.</li>
     <li>❌ No exponga los componentes a agua, polvo o temperaturas extremas.</li>
   </ul>
 

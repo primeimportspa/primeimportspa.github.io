@@ -16,7 +16,7 @@
     <li>Sensor de humedad de suelo capacitivo (no corrosivo)</li>
     <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
     <li>Relé 5V 1 canal (para control de bombas o válvulas pequeñas)</li>
-    <li>Fuente Mean Well 5V/3A (calidad industrial, certificada)</li>
+    <li>Fuente Mean Well IRM-15-12 (12V/1.25A, certificada)</li>
     <li>Cables Dupont (macho-hembra, 20 cm)</li>
   </ul>
 
@@ -30,8 +30,74 @@
   </ul>
   <p><strong>No está diseñado para exposición directa a lluvia, rocío prolongado, sol intenso o polvo ambiental.</strong></p>
 
-  <h2>Próximamente</h2>
-  <p>Guía de conexión paso a paso, código fuente en Arduino IDE y fotos reales del kit armado.</p>
+  <h2>Diagrama de conexión</h2>
+  <pre>
+Fuente Mean Well IRM-15-12
+       │
+       ├── 12V ────────► Relé (VCC)
+       │
+       └── GND ────────► Relé (GND)
+                         │
+ESP32                    │
+GPIO 23 ────────────────► Relé (IN)
+3.3V ───────────────────► BME280 (VCC) y Sensor Suelo (VCC)
+GND ────────────────────► BME280 (GND) y Sensor Suelo (GND)
+GPIO 22 (SCL) ─────────► BME280 (SCL)
+GPIO 21 (SDA) ─────────► BME280 (SDA)
+GPIO 34 ───────────────► Sensor Suelo (OUT)
+  </pre>
+
+  <h2>Código Arduino (ejemplo básico)</h2>
+  <p>Instala las librerías: <code>Adafruit_BME280</code>, <code>Adafruit_Sensor</code></p>
+  <pre>
+#include <Wire.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME280.h>
+
+#define SENSOR_SUELO 34
+#define RELE 23
+
+Adafruit_BME280 bme;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(RELE, OUTPUT);
+  digitalWrite(RELE, HIGH); // Relé activo en bajo
+
+  if (!bme.begin(0x76)) {
+    Serial.println("BME280 no encontrado");
+    while(1);
+  }
+}
+
+void loop() {
+  float humedadSuelo = analogRead(SENSOR_SUELO);
+  float temp = bme.readTemperature();
+  float humedadAire = bme.readHumidity();
+
+  Serial.print("Suelo: "); Serial.print(humedadSuelo);
+  Serial.print(" | Temp: "); Serial.print(temp);
+  Serial.print("°C | Hum. Aire: "); Serial.println(humedadAire);
+
+  // Riego si suelo está seco (<2000 en escala 0-4095)
+  if (humedadSuelo < 2000) {
+    digitalWrite(RELE, LOW);  // Activa bomba
+    delay(10000);             // 10 segundos
+    digitalWrite(RELE, HIGH); // Detiene bomba
+    delay(3600000);           // Espera 1 hora
+  }
+
+  delay(10000);
+}
+  </pre>
+
+  <h2>Recomendaciones de seguridad</h2>
+  <ul>
+    <li>✅ Use una <strong>caja plástica no conductora</strong> para alojar la electrónica.</li>
+    <li>✅ Conecte la fuente Mean Well directamente a un <strong>enchufe con toma de tierra</strong>.</li>
+    <li>❌ No exponga la placa ESP32 ni la fuente a la humedad directa.</li>
+    <li>❌ No use bombas de más de 1A sin un relé de mayor capacidad.</li>
+  </ul>
 
   <h2>Soporte</h2>
   <p>¿Tienes dudas sobre el uso o montaje? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>

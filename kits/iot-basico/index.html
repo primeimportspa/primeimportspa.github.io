@@ -13,16 +13,94 @@
   <h2>Componentes incluidos</h2>
   <ul>
     <li>ESP32-WROOM-32 (original, Espressif)</li>
-    <li>Sensor BME280 (temperatura, humedad, presión)</li>
-    <li>Pantalla OLED 0.96" (SSD1306, I2C)</li>
-    <li>Cables Dupont (macho-hembra)</li>
+    <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
+    <li>Pantalla OLED 0.96" (SSD1306, interfaz I2C)</li>
+    <li>Cables Dupont (macho-hembra, 20 cm)</li>
   </ul>
 
-  <h2>Próximamente</h2>
-  <p>Guía de conexión, código fuente en Arduino IDE y fotos reales del kit armado.</p>
+  <h2>Aplicaciones típicas</h2>
+  <ul>
+    <li>Estación meteorológica personal</li>
+    <li>Monitoreo de invernadero o terrario</li>
+    <li>Proyecto escolar de ciencias</li>
+    <li>Prototipo de domótica (conexión WiFi opcional)</li>
+  </ul>
+
+  <h2>Diagrama de conexión (I2C)</h2>
+  <pre>
+ESP32                BME280 / OLED
+3.3V   ────────────► VCC
+GND    ────────────► GND
+GPIO 22 (SCL) ─────► SCL
+GPIO 21 (SDA) ─────► SDA
+  </pre>
+  <p>✅ Ambos sensores (BME280 y OLED) comparten el mismo bus I2C.</p>
+
+  <h2>Código Arduino (ejemplo básico)</h2>
+  <p>Instala las siguientes librerías desde el Administrador de Librerías de Arduino IDE:</p>
+  <ul>
+    <li><code>Adafruit SSD1306</code></li>
+    <li><code>Adafruit GFX Library</code></li>
+    <li><code>Adafruit BME280 Library</code></li>
+    <li><code>Adafruit Unified Sensor</code></li>
+  </ul>
+
+  <pre>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <Adafruit_BME280.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+Adafruit_BME280 bme;
+
+void setup() {
+  Serial.begin(115200);
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("OLED no encontrado");
+    for(;;);
+  }
+  if (!bme.begin(0x76)) {
+    Serial.println("BME280 no encontrado");
+    for(;;);
+  }
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.display();
+}
+
+void loop() {
+  float temp = bme.readTemperature();
+  float hum = bme.readHumidity();
+  float pres = bme.readPressure() / 100.0F;
+
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("Temp: "); display.print(temp, 1); display.println(" C");
+  display.print("Humedad: "); display.print(hum, 0); display.println(" %");
+  display.print("Presion: "); display.print(pres, 0); display.println(" hPa");
+  display.display();
+
+  Serial.print("T: "); Serial.print(temp);
+  Serial.print("C, H: "); Serial.print(hum);
+  Serial.print("%, P: "); Serial.print(pres); Serial.println(" hPa");
+
+  delay(2000);
+}
+  </pre>
+
+  <h2>Recomendaciones</h2>
+  <ul>
+    <li>✅ Alimente el ESP32 con una fuente de 5V/1A (no desde USB si el proyecto es permanente).</li>
+    <li>✅ El OLED y el BME280 usan direcciones I2C diferentes (0x3C y 0x76), por lo que no hay conflicto.</li>
+    <li>❌ No exponga los componentes a agua, polvo o temperaturas extremas.</li>
+  </ul>
 
   <h2>Soporte</h2>
-  <p>¿Tienes dudas? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
+  <p>¿Tienes dudas sobre el montaje o código? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
 
   <hr>
   <p><a href="/">← Volver al catálogo</a></p>

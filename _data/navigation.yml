@@ -1,0 +1,17 @@
+- title: Inicio
+  url: /
+
+- title: Kits
+  children:
+    - title: Kit Prime IoT Básico
+      url: /kits/iot-basico/
+    - title: Kit Prime Conectores Pro
+      url: /kits/conectores-pro/
+    - title: Kit Prime Protección
+      url: /kits/proteccion/
+    - title: Kit Prime Huerto Inteligente
+      url: /kits/huerto-inteligente/
+    - title: Kit Prime Técnico – Reparación
+      url: /kits/tecnico-reparacion/
+    - title: Ventiladores 24V para Industria (próximamente)
+      url: /kits/industrial-24v/

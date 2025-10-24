@@ -1,10 +1,18 @@
+# Site settings
 title: Prime Imports SpA
 description: Componentes electrónicos originales y kits técnicos para Chile.
 url: https://primeimportspa.github.io
-theme: just-the-docs
-color_scheme: light
-footer_content: "© 2025 Prime Imports SpA – RUT 78.277.312-7"
-search_enabled: true
+
+# Build settings
+remote_theme: just-the-docs/just-the-docs
+
+# Just the Docs configuration
 aux_links:
-  "Soporte Técnico":
-    - "mailto:makoto90@protonmail.com"
+  "Inicio":
+    - /
+
+# Enable search
+search_enabled: true
+
+# Footer
+footer_content: "© 2025 Prime Imports SpA – RUT 78.277.312-7"

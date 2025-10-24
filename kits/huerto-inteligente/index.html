@@ -4,34 +4,46 @@
   <meta charset="UTF-8">
   <title>Kit Prime Huerto Inteligente – Prime Imports SpA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }</style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Kit Prime Huerto Inteligente</h1>
-  <p><em>Monitorea la humedad del suelo y las condiciones ambientales para cuidar tus plantas de interior —ideal para departamentos, oficinas, salas de clases y huertos controlados.</em></p>
+  <nav>
+    <div class="section">Prime Imports SpA</div>
+    <a href="/">Inicio</a>
+    <div class="section">Kits</div>
+    <a href="/kits/iot-basico/">Kit Prime IoT Básico</a>
+    <a href="/kits/conectores-pro/">Kit Prime Conectores Pro</a>
+    <a href="/kits/proteccion/">Kit Prime Protección</a>
+    <a href="/kits/huerto-inteligente/">Kit Prime Huerto Inteligente</a>
+    <a href="/kits/tecnico-reparacion/">Kit Prime Técnico – Reparación</a>
+    <a href="/kits/industrial-24v/">Ventiladores 24V para Industria (próximamente)</a>
+  </nav>
+  <main>
+    <h1>Kit Prime Huerto Inteligente</h1>
+    <p><em>Monitorea la humedad del suelo y las condiciones ambientales para cuidar tus plantas de interior —ideal para departamentos, oficinas, salas de clases y huertos controlados.</em></p>
 
-  <h2>Componentes incluidos</h2>
-  <ul>
-    <li>ESP32-WROOM-32 (original, Espressif)</li>
-    <li>Sensor de humedad de suelo capacitivo (no corrosivo)</li>
-    <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
-    <li>Relé 5V 1 canal (para control de bombas o válvulas pequeñas)</li>
-    <li>Fuente Mean Well IRM-15-12 (12V/1.25A, certificada)</li>
-    <li>Cables Dupont (macho-hembra, 20 cm)</li>
-  </ul>
+    <h2>Componentes incluidos</h2>
+    <ul>
+      <li>ESP32-WROOM-32 (original, Espressif)</li>
+      <li>Sensor de humedad de suelo capacitivo (no corrosivo)</li>
+      <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
+      <li>Relé 5V 1 canal (para control de bombas o válvulas pequeñas)</li>
+      <li>Fuente Mean Well IRM-15-12 (12V/1.25A, certificada)</li>
+      <li>Cables Dupont (macho-hembra, 20 cm)</li>
+    </ul>
 
-  <h2>Uso recomendado: plantas de interior</h2>
-  <p>Este kit está diseñado para <strong>ambientes controlados</strong>, como:</p>
-  <ul>
-    <li>Departamentos y casas (macetas en balcones techados, interiores)</li>
-    <li>Oficinas y espacios de coworking</li>
-    <li>Huertos escolares en salas de clases</li>
-    <li>Invernaderos cubiertos o con techo</li>
-  </ul>
-  <p><strong>No está diseñado para exposición directa a lluvia, rocío prolongado, sol intenso o polvo ambiental.</strong></p>
+    <h2>Uso recomendado: plantas de interior</h2>
+    <p>Este kit está diseñado para <strong>ambientes controlados</strong>, como:</p>
+    <ul>
+      <li>Departamentos y casas (macetas en balcones techados, interiores)</li>
+      <li>Oficinas y espacios de coworking</li>
+      <li>Huertos escolares en salas de clases</li>
+      <li>Invernaderos cubiertos o con techo</li>
+    </ul>
+    <p><strong>No está diseñado para exposición directa a lluvia, rocío prolongado, sol intenso o polvo ambiental.</strong></p>
 
-  <h2>Diagrama de conexión</h2>
-  <pre>
+    <h2>Diagrama de conexión</h2>
+    <pre>
 Fuente Mean Well IRM-15-12
        │
        ├── 12V ────────► Relé (VCC)
@@ -47,9 +59,9 @@ GPIO 21 (SDA) ─────────► BME280 (SDA)
 GPIO 34 ───────────────► Sensor Suelo (OUT)
   </pre>
 
-  <h2>Código Arduino (ejemplo básico)</h2>
-  <p>Instala las librerías: <code>Adafruit_BME280</code>, <code>Adafruit_Sensor</code></p>
-  <pre>
+    <h2>Código Arduino (ejemplo básico)</h2>
+    <p>Instala las librerías: <code>Adafruit_BME280</code>, <code>Adafruit_Sensor</code></p>
+    <pre>
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
@@ -91,18 +103,19 @@ void loop() {
 }
   </pre>
 
-  <h2>Recomendaciones de seguridad</h2>
-  <ul>
-    <li>✅ Use una <strong>caja plástica no conductora</strong> para alojar la electrónica.</li>
-    <li>✅ Conecte la fuente Mean Well directamente a un <strong>enchufe con toma de tierra</strong>.</li>
-    <li>❌ No exponga la placa ESP32 ni la fuente a la humedad directa.</li>
-    <li>❌ No use bombas de más de 1A sin un relé de mayor capacidad.</li>
-  </ul>
+    <h2>Recomendaciones de seguridad</h2>
+    <ul>
+      <li>✅ Use una <strong>caja plástica no conductora</strong> para alojar la electrónica.</li>
+      <li>✅ Conecte la fuente Mean Well directamente a un <strong>enchufe con toma de tierra</strong>.</li>
+      <li>❌ No exponga la placa ESP32 ni la fuente a la humedad directa.</li>
+      <li>❌ No use bombas de más de 1A sin un relé de mayor capacidad.</li>
+    </ul>
 
-  <h2>Soporte</h2>
-  <p>¿Tienes dudas sobre el uso o montaje? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
+    <h2>Soporte</h2>
+    <p>¿Tienes dudas sobre el uso o montaje? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
 
-  <hr>
-  <p><a href="/">← Volver al catálogo</a></p>
+    <hr>
+    <p><a href="/">← Volver al catálogo</a></p>
+  </main>
 </body>
 </html>

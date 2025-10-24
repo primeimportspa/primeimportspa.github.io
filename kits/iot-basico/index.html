@@ -4,48 +4,60 @@
   <meta charset="UTF-8">
   <title>Kit Prime IoT Básico – Prime Imports SpA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }</style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Kit Prime IoT Básico</h1>
-  <p><em>Monitorea el ambiente y muestra los datos en tiempo real —ideal para proyectos escolares, domótica y prototipado rápido.</em></p>
+  <nav>
+    <div class="section">Prime Imports SpA</div>
+    <a href="/">Inicio</a>
+    <div class="section">Kits</div>
+    <a href="/kits/iot-basico/">Kit Prime IoT Básico</a>
+    <a href="/kits/conectores-pro/">Kit Prime Conectores Pro</a>
+    <a href="/kits/proteccion/">Kit Prime Protección</a>
+    <a href="/kits/huerto-inteligente/">Kit Prime Huerto Inteligente</a>
+    <a href="/kits/tecnico-reparacion/">Kit Prime Técnico – Reparación</a>
+    <a href="/kits/industrial-24v/">Ventiladores 24V para Industria (próximamente)</a>
+  </nav>
+  <main>
+    <h1>Kit Prime IoT Básico</h1>
+    <p><em>Monitorea el ambiente y muestra los datos en tiempo real —ideal para proyectos escolares, domótica y prototipado rápido.</em></p>
 
-  <h2>Componentes incluidos</h2>
-  <ul>
-    <li>ESP32-WROOM-32 (original, Espressif)</li>
-    <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
-    <li>Pantalla OLED 0.96" 128×64 (controlador SSD1306, interfaz I2C, blanco)</li>
-    <li>Cables Dupont (macho-hembra, 20 cm)</li>
-  </ul>
+    <h2>Componentes incluidos</h2>
+    <ul>
+      <li>ESP32-WROOM-32 (original, Espressif)</li>
+      <li>Sensor BME280 (temperatura, humedad relativa, presión atmosférica)</li>
+      <li>Pantalla OLED 0.96" 128×64 (controlador SSD1306, interfaz I2C, blanco)</li>
+      <li>Cables Dupont (macho-hembra, 20 cm)</li>
+    </ul>
 
-  <h2>Aplicaciones típicas</h2>
-  <ul>
-    <li>Estación meteorológica personal</li>
-    <li>Monitoreo de invernadero o terrario</li>
-    <li>Proyecto escolar de ciencias</li>
-    <li>Prototipo de domótica con visualización local</li>
-  </ul>
+    <h2>Aplicaciones típicas</h2>
+    <ul>
+      <li>Estación meteorológica personal</li>
+      <li>Monitoreo de invernadero o terrario</li>
+      <li>Proyecto escolar de ciencias</li>
+      <li>Prototipo de domótica con visualización local</li>
+    </ul>
 
-  <h2>Diagrama de conexión (I2C)</h2>
-  <pre>
+    <h2>Diagrama de conexión (I2C)</h2>
+    <pre>
 ESP32                BME280 / OLED
 3.3V   ────────────► VCC
 GND    ────────────► GND
 GPIO 22 (SCL) ─────► SCL
 GPIO 21 (SDA) ─────► SDA
   </pre>
-  <p>✅ Ambos sensores (BME280 y OLED) comparten el mismo bus I2C.</p>
+    <p>✅ Ambos sensores (BME280 y OLED) comparten el mismo bus I2C.</p>
 
-  <h2>Código Arduino (ejemplo básico)</h2>
-  <p>Instala las siguientes librerías desde el Administrador de Librerías de Arduino IDE:</p>
-  <ul>
-    <li><code>Adafruit SSD1306</code></li>
-    <li><code>Adafruit GFX Library</code></li>
-    <li><code>Adafruit BME280 Library</code></li>
-    <li><code>Adafruit Unified Sensor</code></li>
-  </ul>
+    <h2>Código Arduino (ejemplo básico)</h2>
+    <p>Instala las siguientes librerías desde el Administrador de Librerías de Arduino IDE:</p>
+    <ul>
+      <li><code>Adafruit SSD1306</code></li>
+      <li><code>Adafruit GFX Library</code></li>
+      <li><code>Adafruit BME280 Library</code></li>
+      <li><code>Adafruit Unified Sensor</code></li>
+    </ul>
 
-  <pre>
+    <pre>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -92,25 +104,24 @@ void loop() {
 }
   </pre>
 
-  <h2>Notas técnicas</h2>
-  <ul>
-    <li>✅ El módulo OLED incluido usa el <strong>controlador SSD1306 auténtico</strong>, compatible con las librerías Adafruit.</li>
-    <li>✅ Dirección I2C del OLED: <code>0x3C</code> (estándar).</li>
-    <li>✅ Dirección I2C del BME280: <code>0x76</code> (común en módulos Bosch).</li>
-  </ul>
+    <h2>Notas técnicas</h2>
+    <ul>
+      <li>✅ El módulo OLED incluido usa el <strong>controlador SSD1306 auténtico</strong>, compatible con las librerías Adafruit.</li>
+      <li>✅ Dirección I2C del OLED: <code>0x3C</code> (estándar).</li>
+      <li>✅ Dirección I2C del BME280: <code>0x76</code> (común en módulos Bosch).</li>
+    </ul>
 
-  <h2>Recomendaciones</h2>
-  <ul>
-    <li>✅ Alimente el ESP32 con una fuente de 5V/1A (no desde USB si el proyecto es permanente).</li>
-    <li>❌ No exponga los componentes a agua, polvo o temperaturas extremas.</li>
-  </ul>
+    <h2>Recomendaciones</h2>
+    <ul>
+      <li>✅ Alimente el ESP32 con una fuente de 5V/1A (no desde USB si el proyecto es permanente).</li>
+      <li>❌ No exponga los componentes a agua, polvo o temperaturas extremas.</li>
+    </ul>
 
-  <p><a href="/guia-iot-basico.pdf" download>📥 Descargar guía en PDF</a></p>
+    <h2>Soporte</h2>
+    <p>¿Tienes dudas sobre el montaje o código? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
 
-  <h2>Soporte</h2>
-  <p>¿Tienes dudas sobre el montaje o código? Escríbenos a <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
-
-  <hr>
-  <p><a href="/">← Volver al catálogo</a></p>
+    <hr>
+    <p><a href="/">← Volver al catálogo</a></p>
+  </main>
 </body>
 </html>

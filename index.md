@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Inicio
+title: Prime Imports SpA
+nav_order: 1
+description: Componentes electrónicos originales y kits técnicos para makers, técnicos y empresas en Chile.
 ---
 
 # Prime Imports SpA

@@ -12,11 +12,28 @@ plugins:
 # Opciones del tema just-the-docs
 color_scheme: dark  # Puedes cambiarlo a "light" si prefieres
 
-# Enlaces en la cabecera
-aux_links:
-  "Inicio": "/"
-  "Kits": "/kits/"
-  "Blog Técnico": "/blog/"
+# Navegación principal
+nav_external_links:
+  - title: Inicio
+    url: /
+  - title: Kits
+    children:
+      - title: Kit Prime IoT Básico
+        url: /kits/iot-basico/
+      - title: Kit Prime Conectores Pro
+        url: /kits/conectores-pro/
+      - title: Kit Prime Protección
+        url: /kits/proteccion/
+      - title: Kit Prime Huerto Inteligente
+        url: /kits/huerto-inteligente/
+      - title: Kit Prime Técnico – Reparación
+        url: /kits/tecnico-reparacion/
+      - title: Ventiladores 24V para Industria
+        url: /kits/industrial-24v/
+  - title: Blog Técnico
+    url: /blog/
+  - title: Contacto
+    url: /contacto/
 
 # Habilitar búsqueda
 search_enabled: true

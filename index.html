@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/style.css">
   <!-- Prism.js CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" integrity="sha512-kSwGoyIkfz4+hMo5jkPH+HsV46P9UD9pCBWh2UAnH+OKFl1tF09aZzLYyL8VMR8fU4KqgN9NHSUjH507mFD+ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" integrity="sha512-kSwGoyIkfz4+hMo5jkPH+HsV46P9UD9pCBWh2UAnH+OKFl1tF09aZzLYyL8VMR8fU4KqgN9NHSUjH507mFD+ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav>
@@ -38,6 +38,27 @@
 
     <h2>Soporte técnico</h2>
     <p>¿Tienes dudas sobre un kit o componente? Escríbenos a: <a href="mailto:makoto90@protonmail.com">makoto90@protonmail.com</a></p>
+
+    <!-- Ejemplo de código con resaltado -->
+    <h2>Ejemplo de código resaltado</h2>
+    <pre><code class="language-arduino">
+void setup() {
+  Serial.begin(115200);
+  pinMode(2, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(2, HIGH);
+  delay(1000);
+  digitalWrite(2, LOW);
+  delay(1000);
+}
+    </code></pre>
+
   </main>
+
+  <!-- Prism.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha512-9H+K3QfGIrmCnYy0Zu2+ce0CjC6p1t/s3L8zfW8Z9kZmN+04cjyLl9F3/9UdX7L0jZso2QKqOZ8WlDcLs8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-S2lgZf+3X+RNOpc50jG2qCU3xkll/7nWg54qOGU6FiRYMw3oX4Yq0EcZ3vQg8hD4W4ZqgN9NHSUjH507mFD+ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

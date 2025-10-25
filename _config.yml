@@ -10,10 +10,10 @@ plugins:
   - jekyll-remote-theme
 
 # Opciones del tema just-the-docs
-color_scheme: dark  # Puedes cambiarlo a "light" si prefieres
+color_scheme: dark
 
-# Navegación principal
-nav_external_links:
+# Navegación principal (estructura de menú)
+nav:
   - title: Inicio
     url: /
   - title: Kits

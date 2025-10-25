@@ -1,0 +1,25 @@
+title: Prime Imports SpA
+description: Componentes electrónicos originales y kits técnicos para makers, técnicos y empresas en Chile.
+url: https://primeimportspa.github.io
+
+# Configuración de Jekyll
+theme: just-the-docs
+
+# Plugins necesarios
+plugins:
+  - jekyll-remote-theme
+
+# Opciones del tema just-the-docs
+color_scheme: dark  # Puedes cambiarlo a "light" si prefieres
+
+# Enlaces en la cabecera
+aux_links:
+  "Inicio": "/"
+  "Kits": "/kits/"
+  "Blog Técnico": "/blog/"
+
+# Habilitar búsqueda
+search_enabled: true
+
+# Pie de página
+footer_content: "© 2025 Prime Imports SpA – RUT 78.277.312-7"

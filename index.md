@@ -22,7 +22,11 @@ Diseñados para resolver problemas reales: automatización de huertos, reparaci�
 
 ## Soporte técnico
 
-¿Tienes dudas sobre un kit o componente? Escríbenos a: [makoto90@protonmail.com](mailto:makoto90@protonmail.com)
+¿Tienes dudas sobre un kit o componente?
+
+- Para **ventas**: [ventas@primeimportsspa.cl](mailto:ventas@primeimportsspa.cl)  
+- Para **soporte técnico**: [soporte@primeimportsspa.cl](mailto:soporte@primeimportsspa.cl)  
+- Para **consultas generales**: [info@primeimportsspa.cl](mailto:info@primeimportsspa.cl)
 
 ## Ejemplo de código resaltado
 

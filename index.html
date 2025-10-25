@@ -9,127 +9,76 @@
   <link rel="stylesheet" href="/style.css">
   <!-- Prism.js CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" integrity="sha512-kSwGoyIkfz4+hMo5jkPH+HsV46P9UD9pCBWh2UAnH+OKFl1tF09aZzLYyL8VMR8fU4KqgN9NHSUjH507mFD+ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    nav {
-      background-color: #202225;
-      padding: 1rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a, nav .section {
-      color: #ffffff;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    nav a:hover, nav .section:hover {
-      background-color: #3a3f44;
-    }
-    nav .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    nav .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #2d2d2d;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 4px;
-    }
-    nav .dropdown-content a {
-      color: #ffffff;
-      padding: 0.75rem 1rem;
-      text-decoration: none;
-      display: block;
-    }
-    nav .dropdown-content a:hover {
-      background-color: #444;
-    }
-    nav .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    .highlight {
-      color: #e74c3c;
-    }
-    pre[class*="language-"] {
-      background: #2d2d2d !important;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 1.5rem 0;
-    }
-    code, pre {
-      font-family: "Fira Code", "Consolas", monospace;
-    }
-  </style>
 </head>
 <body>
-  <nav>
-    <div class="section">Prime Imports SpA</div>
-    <a href="/">Inicio</a>
-    <div class="dropdown">
-      <div class="section">Kits</div>
-      <div class="dropdown-content">
-        <a href="/kits/iot-basico/">Kit Prime IoT Básico</a>
-        <a href="/kits/conectores-pro/">Kit Prime Conectores Pro</a>
-        <a href="/kits/proteccion/">Kit Prime Protección</a>
-        <a href="/kits/huerto-inteligente/">Kit Prime Huerto Inteligente</a>
-        <a href="/kits/tecnico-reparacion/">Kit Prime Técnico – Reparación</a>
-        <a href="/kits/industrial-24v/">Ventiladores 24V para Industria</a>
-      </div>
-    </div>
-    <a href="/blog/">Blog Técnico</a>
-    <a href="/contacto/">Contacto</a>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <div class="nav-brand">Prime Imports SpA</div>
+      <ul class="nav-menu">
+        <li><a href="/">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Kits ▼</a>
+          <div class="dropdown-content">
+            <a href="/kits/iot-basico/">Kit Prime IoT Básico</a>
+            <a href="/kits/conectores-pro/">Kit Prime Conectores Pro</a>
+            <a href="/kits/proteccion/">Kit Prime Protección</a>
+            <a href="/kits/huerto-inteligente/">Kit Prime Huerto Inteligente</a>
+            <a href="/kits/tecnico-reparacion/">Kit Prime Técnico – Reparación</a>
+            <a href="/kits/industrial-24v/">Ventiladores 24V para Industria</a>
+          </div>
+        </li>
+        <li><a href="/blog/">Blog Técnico</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
-    <h1><span class="highlight">Prime</span> Imports SpA</h1>
-    <p><strong>Componentes electrónicos originales y kits técnicos para makers, técnicos y empresas en Chile.</strong></p>
+    <section class="hero">
+      <h1>Electrónica original, código funcional, soluciones reales.</h1>
+      <p>Componentes electrónicos y kits técnicos para makers, técnicos y empresas en Chile.</p>
+    </section>
 
-    <h2>¿Por qué comprar con nosotros?</h2>
-    <ul>
-      <li>✅ <strong>Productos 100% originales</strong>: ESP32, sensores Bosch, ventiladores Sunon, fuentes Mean Well.</li>
-      <li>✅ <strong>Factura con RUT</strong>: respaldo fiscal para empresas y técnicos.</li>
-      <li>✅ <strong>Guías técnicas en español</strong>: código listo para usar, diagramas de conexión, soporte postventa.</li>
-      <li>✅ <strong>Envíos rápidos</strong>: Bluexpress 24–48 hrs en Santiago.</li>
-    </ul>
+    <section class="features">
+      <h2>¿Por qué elegirnos?</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>✅ Productos 100% originales</h3>
+          <p>ESP32, sensores Bosch, ventiladores Sunon, fuentes Mean Well.</p>
+        </div>
+        <div class="feature">
+          <h3>✅ Factura con RUT</h3>
+          <p>Respaldo fiscal para empresas y técnicos.</p>
+        </div>
+        <div class="feature">
+          <h3>✅ Guías técnicas en español</h3>
+          <p>Código listo para usar, diagramas de conexión, soporte postventa.</p>
+        </div>
+        <div class="feature">
+          <h3>✅ Envíos rápidos</h3>
+          <p>Bluexpress 24–48 hrs en Santiago.</p>
+        </div>
+      </div>
+    </section>
 
-    <h2>Nuestros kits</h2>
-    <p>Diseñados para resolver problemas reales: automatización de huertos, reparación de fuentes, prototipado IoT y más.</p>
+    <section class="kits">
+      <h2>Nuestros kits</h2>
+      <p>Diseñados para resolver problemas reales: automatización de huertos, reparación de fuentes, prototipado IoT y más.</p>
+    </section>
 
-    <h2>Soporte técnico</h2>
-    <p>¿Tienes dudas sobre un kit o componente?</p>
-    <ul>
-      <li>Para <strong>ventas</strong>: <a href="mailto:ventas@primeimportsspa.cl">ventas@primeimportsspa.cl</a></li>
-      <li>Para <strong>soporte técnico</strong>: <a href="mailto:soporte@primeimportsspa.cl">soporte@primeimportsspa.cl</a></li>
-      <li>Para <strong>consultas generales</strong>: <a href="mailto:info@primeimportsspa.cl">info@primeimportsspa.cl</a></li>
-    </ul>
+    <section class="contact">
+      <h2>Soporte técnico</h2>
+      <p>¿Tienes dudas sobre un kit o componente?</p>
+      <ul>
+        <li>Para <strong>ventas</strong>: <a href="mailto:ventas@primeimportsspa.cl">ventas@primeimportsspa.cl</a></li>
+        <li>Para <strong>soporte técnico</strong>: <a href="mailto:soporte@primeimportsspa.cl">soporte@primeimportsspa.cl</a></li>
+        <li>Para <strong>consultas generales</strong>: <a href="mailto:info@primeimportsspa.cl">info@primeimportsspa.cl</a></li>
+      </ul>
+    </section>
 
-    <!-- Ejemplo de código con resaltado -->
-    <h2>Ejemplo de código resaltado</h2>
-    <pre><code class="language-arduino">
+    <section class="code-example">
+      <h2>Ejemplo de código resaltado</h2>
+      <pre><code class="language-arduino">
 void setup() {
   Serial.begin(115200);
   pinMode(2, OUTPUT);
@@ -141,9 +90,13 @@ void loop() {
   digitalWrite(2, LOW);
   delay(1000);
 }
-    </code></pre>
-
+      </code></pre>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Prime Imports SpA – RUT 78.277.312-7</p>
+  </footer>
 
   <!-- Prism.js JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha512-9H+K3QfGIrmCnYy0Zu2+ce0CjC6p1t/s3L8zfW8Z9kZmN+04cjyLl9F3/9UdX7L0jZso2QKqOZ8WlDcLs8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

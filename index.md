@@ -1,0 +1,38 @@
+---
+layout: default
+title: Inicio
+---
+
+# Prime Imports SpA
+
+**Componentes electrónicos originales y kits técnicos para makers, técnicos y empresas en Chile.**
+
+## ¿Por qué comprar con nosotros?
+
+- ✅ **Productos 100% originales**: ESP32, sensores Bosch, ventiladores Sunon, fuentes Mean Well.
+- ✅ **Factura con RUT**: respaldo fiscal para empresas y técnicos.
+- ✅ **Guías técnicas en español**: código listo para usar, diagramas de conexión, soporte postventa.
+- ✅ **Envíos rápidos**: Bluexpress 24–48 hrs en Santiago.
+
+## Nuestros kits
+
+Diseñados para resolver problemas reales: automatización de huertos, reparación de fuentes, prototipado IoT y más.
+
+## Soporte técnico
+
+¿Tienes dudas sobre un kit o componente? Escríbenos a: [makoto90@protonmail.com](mailto:makoto90@protonmail.com)
+
+## Ejemplo de código resaltado
+
+```arduino
+void setup() {
+  Serial.begin(115200);
+  pinMode(2, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(2, HIGH);
+  delay(1000);
+  digitalWrite(2, LOW);
+  delay(1000);
+}

@@ -1,16 +1,19 @@
+/* Estilo para bloques de código resaltados con Prism */
 pre[class*="language-"] {
-  background: #2d2d2d !important; /* Fondo oscuro del bloque */
+  background: #2d2d2d; /* Fondo oscuro */
   padding: 1rem;
   border-radius: 6px;
   overflow-x: auto;
   font-size: 0.9rem;
   line-height: 1.5;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
 }
 
+/* Estilo para el texto dentro del bloque de código */
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -20,7 +23,7 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-/* Opcional: mejorar el contraste del texto */
+/* Colores de sintaxis (opcional, mejora el contraste) */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -30,10 +33,6 @@ pre[class*="language-"] {
 
 .token.punctuation {
   color: #b3b9c5;
-}
-
-.token.namespace {
-  opacity: 0.7;
 }
 
 .token.property,
@@ -77,12 +76,4 @@ pre[class*="language-"] {
 .token.important,
 .token.variable {
   color: #f8c555;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
-  font-style: italic;
 }

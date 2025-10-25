@@ -1,6 +1,6 @@
+# Navegación principal para el tema just-the-docs
 - title: Inicio
   url: /
-
 - title: Kits
   children:
     - title: Kit Prime IoT Básico
@@ -13,5 +13,9 @@
       url: /kits/huerto-inteligente/
     - title: Kit Prime Técnico – Reparación
       url: /kits/tecnico-reparacion/
-    - title: Ventiladores 24V para Industria (próximamente)
+    - title: Ventiladores 24V para Industria
       url: /kits/industrial-24v/
+- title: Blog Técnico
+  url: /blog/
+- title: Contacto
+  url: /contacto/

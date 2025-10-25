@@ -3,7 +3,7 @@ description: Componentes electrónicos originales y kits técnicos para makers, 
 url: https://primeimportspa.github.io
 
 # Configuración de Jekyll
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 # Plugins necesarios
 plugins:
